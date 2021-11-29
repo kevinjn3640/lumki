@@ -2,9 +2,9 @@
 
 namespace Lumki\Lumki;
 
+use Lumki\Lumki\Commands\LumkiCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Lumki\Lumki\Commands\LumkiCommand;
 
 class LumkiServiceProvider extends PackageServiceProvider
 {
