@@ -8,6 +8,27 @@ use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class LumkiServiceProvider extends PackageServiceProvider
 {
+    public function boot()
+    {
+        // ... other things
+        $this->registerRoutes();
+    }
+
+    protected function registerRoutes()
+    {
+        Route::group($this->routeConfiguration(), function () {
+            $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
+        });
+    }
+
+    protected function routeConfiguration()
+    {
+        return [
+            'prefix' => config('blogpackage.prefix'),
+            'middleware' => config('blogpackage.middleware'),
+        ];
+    }
+
     public function configurePackage(Package $package): void
     {
         /*
