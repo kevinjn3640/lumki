@@ -2,7 +2,7 @@
 
 namespace Lumki\Lumki\Http\Controllers;
 
-class PostController extends Controller
+class PostController
 {
     public function index()
     {
