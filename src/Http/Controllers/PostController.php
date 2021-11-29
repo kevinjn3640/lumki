@@ -1,6 +1,6 @@
 <?php
 
-namespace JohnDoe\BlogPackage\Http\Controllers;
+namespace Lumki\Lumki\Http\Controllers;
 
 class PostController extends Controller
 {
