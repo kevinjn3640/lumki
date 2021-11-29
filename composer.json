@@ -34,7 +34,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Lumki\\Lumki\\": "src",
+            "Lumki\\Lumki\\": "./src/",
             "Lumki\\Lumki\\Database\\Factories\\": "database/factories"
         }
     },
