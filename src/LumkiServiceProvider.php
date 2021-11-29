@@ -2,10 +2,10 @@
 
 namespace Lumki\Lumki;
 
+use Illuminate\Support\Facades\Route;
 use Lumki\Lumki\Commands\LumkiCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Illuminate\Support\Facades\Route;
 
 class LumkiServiceProvider extends PackageServiceProvider
 {
