@@ -25,8 +25,8 @@ class LumkiServiceProvider extends PackageServiceProvider
     protected function routeConfiguration()
     {
         return [
-            'prefix' => config('blogpackage.prefix'),
-            'middleware' => config('blogpackage.middleware'),
+            'prefix' => config('lumki.prefix'),
+//            'middleware' => config('lumki.middleware'),
         ];
     }
 
