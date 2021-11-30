@@ -4,9 +4,7 @@
 
 <script>
 export default {
-    props: {
-        users: any,
-    },
+    props: ['users'],
     mounted() {
         console.log('Example component mounted.')
     }
