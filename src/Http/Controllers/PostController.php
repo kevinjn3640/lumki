@@ -11,7 +11,7 @@ class PostController
     public function index()
     {
 //        dd("HI");
-        Inertia::setRootView('lumki::app');
+        Inertia::setRootView('lumki::lumki');
 
         View::share([
             'cssPath' => __DIR__.'/../../../public/css/app.css',
