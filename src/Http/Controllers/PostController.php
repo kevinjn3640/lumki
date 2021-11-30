@@ -2,12 +2,23 @@
 
 namespace Lumki\Lumki\Http\Controllers;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\View;
 
 class PostController
 {
     public function index()
     {
 //        dd("HI");
+        Inertia::setRootView('lumki::app');
+
+        View::share([
+            'cssPath' => __DIR__.'/../../../public/css/app.css',
+            'jsPath' => __DIR__.'/../../../public/js/app.js',
+            'translations' => static::getTranslations(),
+        ]);
+
+//        Inertia::share(app(FrontendState::class)->current($type, $billable));
+
         return Inertia::render('User');
     }
 
