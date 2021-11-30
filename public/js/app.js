@@ -66,7 +66,12 @@ var appName = ((_a = window.document.getElementsByTagName('title')[0]) === null 
     return "".concat(_title, " - ").concat(appName);
   },
   resolve: function resolve(name) {
-    return __webpack_require__("./resources/js/Pages sync recursive ^\\.\\/.*$")("./".concat(name))["default"];
+    var page = __webpack_require__("./resources/js/Pages sync recursive ^\\.\\/.*$")("./".concat(name)); // if (page.layout === undefined && !name.startsWith('Public/')) {
+    //   page.layout ??= Layout;
+    // }
+
+
+    return page;
   },
   setup: function setup(_ref) {
     var el = _ref.el,
