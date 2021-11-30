@@ -1,8 +1,12 @@
 import React from "react";
+import {usePage} from "@inertiajs/inertia-react";
 const User = () => {
+    const page = usePage<Object | any>();
     return (
         <>
-            <div>Hi</div>
+            <div>{page.props?.users?.data?.map((user: Object | any, index: number) => (
+                <div key={index}>{user?.email}</div>
+            ))}</div>
         </>
     )
 }

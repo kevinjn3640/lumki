@@ -25,7 +25,7 @@ class PostController
 //        Inertia::share(app(FrontendState::class)->current($type, $billable));
 
         return Inertia::render('User', [
-            'users' => \App\Models\User::all(),
+            'users' => \App\Models\User::orderBy('name')->paginate(10),
         ]);
     }
 

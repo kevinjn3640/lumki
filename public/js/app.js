@@ -2111,8 +2111,17 @@ Object.defineProperty(exports, "__esModule", ({
 
 var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
+var inertia_react_1 = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+
 var User = function User() {
-  return react_1["default"].createElement(react_1["default"].Fragment, null, react_1["default"].createElement("div", null, "Hi"));
+  var _a, _b, _c;
+
+  var page = (0, inertia_react_1.usePage)();
+  return react_1["default"].createElement(react_1["default"].Fragment, null, react_1["default"].createElement("div", null, (_c = (_b = (_a = page.props) === null || _a === void 0 ? void 0 : _a.users) === null || _b === void 0 ? void 0 : _b.data) === null || _c === void 0 ? void 0 : _c.map(function (user, index) {
+    return react_1["default"].createElement("div", {
+      key: index
+    }, user === null || user === void 0 ? void 0 : user.email);
+  })));
 };
 
 exports["default"] = User;
