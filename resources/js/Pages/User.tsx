@@ -1,5 +1,4 @@
 import React from "react";
-
 const User = () => {
     return (
         <>
@@ -7,5 +6,4 @@ const User = () => {
         </>
     )
 }
-
 export default User;
