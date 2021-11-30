@@ -5,7 +5,7 @@ const User = () => {
     const page = usePage<Object | any>();
     return (
         <>
-            <div>{page.props?.users?.data?.map((user: Object | any, index: number) => (
+            <div>{page.props?.users?.map((user: Object | any, index: number) => (
                 <div key={index}>
                     <span>{user?.id}</span>
                     <span>{user?.name}</span>
