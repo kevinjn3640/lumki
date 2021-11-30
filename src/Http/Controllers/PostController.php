@@ -22,7 +22,7 @@ class PostController
 //        Inertia::share(app(FrontendState::class)->current($type, $billable));
 
         return Inertia::render('User', [
-            'users' => User::find(1);
+            'users' => User::find(1),
         ]);
     }
 
