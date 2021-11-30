@@ -1,8 +1,10 @@
 <?php
 
 namespace Lumki\Lumki\Http\Controllers;
+
 use Inertia\Inertia;
 use Illuminate\Support\Facades\View;
+use App\Models\User;
 
 class PostController
 {
@@ -19,7 +21,9 @@ class PostController
 
 //        Inertia::share(app(FrontendState::class)->current($type, $billable));
 
-        return Inertia::render('User');
+        return Inertia::render('User', [
+            'users' => User::find(1);
+        ]);
     }
 
     public function show()

@@ -3881,6 +3881,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: {
+    users: any
+  },
   mounted: function mounted() {
     console.log('Example component mounted.');
   }
@@ -8250,7 +8253,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("Hello, Example Component!")])
+  return _c("div", [_vm._v(_vm._s(_vm.users.email))])
 }
 var staticRenderFns = []
 render._withStripped = true

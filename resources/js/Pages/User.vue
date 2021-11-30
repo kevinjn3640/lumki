@@ -1,9 +1,12 @@
 <template>
-    <div>Hello, Example Component!</div>
+    <div>{{ users.email }}</div>
 </template>
 
 <script>
 export default {
+    props: {
+        users: any,
+    },
     mounted() {
         console.log('Example component mounted.')
     }
