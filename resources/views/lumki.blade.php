@@ -20,6 +20,7 @@
 </head>
 <body class="font-sans antialiased">
 @inertia
+<!-- Scripts -->
 <script>
     {!! file_get_contents($jsPath) !!}
 </script>
