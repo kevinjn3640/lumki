@@ -1,6 +1,7 @@
 <?php
 
 namespace Lumki\Lumki\Http\Controllers;
+use Inertia\Inertia;
 
 class PostController
 {
