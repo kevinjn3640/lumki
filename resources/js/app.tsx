@@ -10,7 +10,7 @@ const appName =
 
 createInertiaApp({
     title: title => `${title} - ${appName}`,
-    resolve: name => require(`./Pages/${name}.tsx`),
+    resolve: name => require(`./Pages/${name}`).default,
     setup({ el, App, props }) {
         return render(<App {...props} />, el);
     },
