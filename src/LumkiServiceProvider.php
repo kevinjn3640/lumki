@@ -13,6 +13,7 @@ class LumkiServiceProvider extends PackageServiceProvider
     {
         // ... other things
         $this->registerRoutes();
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'lumki');
     }
 
     protected function registerRoutes()
