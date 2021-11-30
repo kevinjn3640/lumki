@@ -6,7 +6,9 @@ class PostController
 {
     public function index()
     {
-        dd("HI");
+//        dd("HI");
+        return Inertia::render('User', [
+            'users' => User::find(1);
     }
 
     public function show()
