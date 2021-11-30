@@ -26,8 +26,8 @@
 @inertia
 
 <!-- Scripts -->
-<script>
-    {!! file_get_contents($jsPath) !!}
-</script>
+{{--<script>--}}
+{{--    {!! file_get_contents($jsPath) !!}--}}
+{{--</script>--}}
 </body>
 </html>
