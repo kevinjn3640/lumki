@@ -11,7 +11,8 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js/app.js').vue()
+mix.ts('resources/js/app.tsx', 'public/js/app.js')
+    .react()
     .postCss('resources/css/app.css', 'public/css/app.css', [
         require('postcss-import'),
         require('tailwindcss'),
