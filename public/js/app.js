@@ -22,7 +22,7 @@ Object.defineProperty(exports, "__esModule", ({
 var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
 var User = function User() {
-  return react_1["default"].createElement(react_1["default"].Fragment, null, react_1["default"].createElement("div", null, "Hie"));
+  return react_1["default"].createElement(react_1["default"].Fragment, null, react_1["default"].createElement("div", null, "Hi"));
 };
 
 exports["default"] = User;
@@ -66,7 +66,7 @@ var appName = ((_a = window.document.getElementsByTagName('title')[0]) === null 
     return "".concat(_title, " - ").concat(appName);
   },
   resolve: function resolve(name) {
-    return __webpack_require__("./resources/js/Pages sync recursive ^\\.\\/.*\\.tsx$")("./".concat(name, ".tsx"));
+    return __webpack_require__("./resources/js/Pages sync recursive ^\\.\\/.*$")("./".concat(name))["default"];
   },
   setup: function setup(_ref) {
     var el = _ref.el,
@@ -125,13 +125,14 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/Pages sync recursive ^\\.\\/.*\\.tsx$":
-/*!************************************************!*\
-  !*** ./resources/js/Pages/ sync ^\.\/.*\.tsx$ ***!
-  \************************************************/
+/***/ "./resources/js/Pages sync recursive ^\\.\\/.*$":
+/*!*******************************************!*\
+  !*** ./resources/js/Pages/ sync ^\.\/.*$ ***!
+  \*******************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
+	"./User": "./resources/js/Pages/User.tsx",
 	"./User.tsx": "./resources/js/Pages/User.tsx"
 };
 
@@ -153,7 +154,7 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = "./resources/js/Pages sync recursive ^\\.\\/.*\\.tsx$";
+webpackContext.id = "./resources/js/Pages sync recursive ^\\.\\/.*$";
 
 /***/ }),
 

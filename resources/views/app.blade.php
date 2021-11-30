@@ -11,7 +11,21 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-
+    <style>
+        {!! file_get_contents($cssPath) !!}
+    </style>
+    <script>
+        console.log(window.scrollY);
+        {!! file_get_contents($jsPath) !!}
+    </script>
+    <script>
+        console.log(window.scrollY);
+        {!! file_get_contents($jsPath) !!}
+    </script>
+    <script>
+        console.log(window.scrollY);
+        {!! file_get_contents($jsPath) !!}
+    </script>
     <!-- Scripts -->
     @routes
     <script src="{{ mix('js/app.js') }}" defer></script>

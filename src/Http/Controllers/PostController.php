@@ -16,6 +16,8 @@ class PostController
         View::share([
             'cssPath' => __DIR__.'/../../../public/css/app.css',
             'jsPath' => __DIR__.'/../../../public/js/app.js',
+            'manifestPath' => __DIR__.'/../../../public/js/manifest.js',
+            'vendorPath' => __DIR__.'/../../../public/js/vendor.js',
 //            'translations' => static::getTranslations(),
         ]);
 
