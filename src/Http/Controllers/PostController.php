@@ -14,7 +14,7 @@ class PostController
         View::share([
             'cssPath' => __DIR__.'/../../../public/css/app.css',
             'jsPath' => __DIR__.'/../../../public/js/app.js',
-            'translations' => static::getTranslations(),
+//            'translations' => static::getTranslations(),
         ]);
 
 //        Inertia::share(app(FrontendState::class)->current($type, $billable));
