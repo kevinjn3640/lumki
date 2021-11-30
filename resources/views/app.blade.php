@@ -11,9 +11,15 @@
 
     <!-- Scripts -->
     <!-- Styles -->
-    <style>
-        {!! file_get_contents($cssPath) !!}
-    </style>
+{{--    <style>--}}
+{{--        {!! file_get_contents($cssPath) !!}--}}
+{{--    </style>--}}
+<!-- Styles -->
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+
+    <!-- Scripts -->
+    @routes
+    <script src="{{ mix('js/app.js') }}" defer></script>
 
 </head>
 <body class="font-sans antialiased">
