@@ -10,10 +10,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <style>
         {!! file_get_contents($cssPath) !!}
     </style>
+    @routes
     <script>
         console.log(window.scrollY);
         {!! file_get_contents($jsPath) !!}
@@ -27,10 +27,6 @@
         {!! file_get_contents($jsPath) !!}
     </script>
     <!-- Scripts -->
-    @routes
-    <script src="{{ mix('js/app.js') }}" defer></script>
-    <script src="{{ mix('js/vendor.js') }}" defer></script>
-    <script src="{{ mix('js/manifest.js') }}" defer></script>
 </head>
 <body class="font-sans antialiased">
 @inertia
