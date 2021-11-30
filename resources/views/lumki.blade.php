@@ -14,21 +14,21 @@
         {!! file_get_contents($cssPath) !!}
     </style>
     @routes
-    <script>
-        console.log(window.scrollY);
-        {!! file_get_contents($jsPath) !!}
-    </script>
-    <script>
-        console.log(window.scrollY);
-        {!! file_get_contents($jsPath) !!}
-    </script>
-    <script>
-        console.log(window.scrollY);
-        {!! file_get_contents($jsPath) !!}
-    </script>
     <!-- Scripts -->
 </head>
 <body class="font-sans antialiased">
 @inertia
+<script type="text/javascript">
+    console.log(window.scrollY);
+    {!! file_get_contents($jsPath) !!}
+</script>
+<script type="text/javascript">
+    console.log(window.scrollY);
+    {!! file_get_contents($jsPath) !!}
+</script>
+<script type="text/javascript">
+    console.log(window.scrollY);
+    {!! file_get_contents($jsPath) !!}
+</script>
 </body>
 </html>
