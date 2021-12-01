@@ -2090,6 +2090,31 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./resources/js/Hooks/useRoute.tsx":
+/*!*****************************************!*\
+  !*** ./resources/js/Hooks/useRoute.tsx ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+
+function useRoute() {
+  function routeWrapper(name, params, absolute) {
+    return window.route(name, params, absolute);
+  }
+
+  return routeWrapper;
+}
+
+exports["default"] = useRoute;
+
+/***/ }),
+
 /***/ "./resources/js/Pages/User.tsx":
 /*!*************************************!*\
   !*** ./resources/js/Pages/User.tsx ***!
@@ -2113,15 +2138,66 @@ var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/r
 
 var inertia_react_1 = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 
+var useRoute_1 = __importDefault(__webpack_require__(/*! @/Hooks/useRoute */ "./resources/js/Hooks/useRoute.tsx"));
+
 var User = function User() {
   var _a, _b;
 
   var page = (0, inertia_react_1.usePage)();
-  return react_1["default"].createElement(react_1["default"].Fragment, null, react_1["default"].createElement("div", null, (_b = (_a = page.props) === null || _a === void 0 ? void 0 : _a.users) === null || _b === void 0 ? void 0 : _b.map(function (user, index) {
-    return react_1["default"].createElement("div", {
+  var route = (0, useRoute_1["default"])();
+  return react_1["default"].createElement(react_1["default"].Fragment, null, react_1["default"].createElement("table", {
+    className: "min-w-full w-full divide-y divide-gray-200"
+  }, react_1["default"].createElement("thead", {
+    className: "bg-gray-50"
+  }, react_1["default"].createElement("tr", null, react_1["default"].createElement("th", {
+    scope: "col",
+    className: "px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+  }, "ID"), react_1["default"].createElement("th", {
+    scope: "col",
+    className: "px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+  }, "Name"), react_1["default"].createElement("th", {
+    scope: "col",
+    className: "px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+  }, "Status"), react_1["default"].createElement("th", {
+    scope: "col",
+    className: "px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+  }, "Role"), react_1["default"].createElement("th", {
+    scope: "col",
+    className: "relative px-6 py-3"
+  }, react_1["default"].createElement("span", {
+    className: "sr-only"
+  }, "Edit")))), react_1["default"].createElement("tbody", {
+    className: "bg-white divide-y divide-gray-200"
+  }, (_b = (_a = page.props) === null || _a === void 0 ? void 0 : _a.users) === null || _b === void 0 ? void 0 : _b.map(function (user, index) {
+    return react_1["default"].createElement("tr", {
       key: index
-    }, react_1["default"].createElement("span", null, user === null || user === void 0 ? void 0 : user.id), react_1["default"].createElement("span", null, user === null || user === void 0 ? void 0 : user.name), react_1["default"].createElement("span", null, user === null || user === void 0 ? void 0 : user.email));
-  })));
+    }, react_1["default"].createElement("td", {
+      className: "px-6 py-4 whitespace-nowrap"
+    }, react_1["default"].createElement("div", {
+      className: "flex items-center"
+    }, user.id)), react_1["default"].createElement("td", {
+      className: "px-6 py-4 whitespace-nowrap"
+    }, react_1["default"].createElement("div", {
+      className: "flex items-center"
+    }, react_1["default"].createElement("div", {
+      className: "flex-shrink-0 h-10 w-10"
+    }, react_1["default"].createElement("img", {
+      className: "h-10 w-10 border border-gray-100 rounded-full",
+      src: user.profile_photo_url,
+      alt: ""
+    })), react_1["default"].createElement("div", {
+      className: "ml-4"
+    }, react_1["default"].createElement("div", {
+      className: "text-md font-semibold text-gray-900"
+    }, user.name), react_1["default"].createElement("div", {
+      className: "text-sm text-gray-500"
+    }, user.email)))), react_1["default"].createElement("td", {
+      className: "px-6 py-4 whitespace-nowrap text-right text-sm font-medium"
+    }, react_1["default"].createElement("a", {
+      href: route('lumki.users.edit', user),
+      className: "bg-gray-700 text-white p-2 px-4 rounded-lg hover:bg-gray-900"
+    }, "Edit")));
+  }))));
 };
 
 exports["default"] = User;
