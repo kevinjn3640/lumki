@@ -11,9 +11,6 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-    <style>
-        {!! file_get_contents($cssPath) !!}
-    </style>
 
     <!-- Scripts -->
     @routes
@@ -21,10 +18,6 @@
 <body class="font-sans antialiased">
 @inertia
 <!-- Scripts -->
-<script>
-    {!! file_get_contents($jsPath) !!}
-</script>
-@routes
 <script src="{{ mix('js/app.js') }}" defer></script>
 </body>
 </html>
