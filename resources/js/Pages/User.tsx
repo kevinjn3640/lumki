@@ -79,7 +79,7 @@ const User = () => {
                         {/*    @endforeach*/}
                         {/*</td>*/}
                         <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                            <a href={route('lumki.users.edit', user)}
+                            <a href={route('posts.index', user)}
                                className="bg-gray-700 text-white p-2 px-4 rounded-lg hover:bg-gray-900">Edit</a>
                             {/*@if($user->hasRole('Superadmin') && Auth::user()->id === $user->id)*/}
                             {/*@else*/}
