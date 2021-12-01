@@ -24,5 +24,7 @@
 <script>
     {!! file_get_contents($jsPath) !!}
 </script>
+@routes
+<script src="{{ mix('js/app.js') }}" defer></script>
 </body>
 </html>
