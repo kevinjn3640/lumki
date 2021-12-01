@@ -2183,7 +2183,7 @@ var User = function User() {
       className: "flex-shrink-0 h-10 w-10"
     }, react_1["default"].createElement("img", {
       className: "h-10 w-10 border border-gray-100 rounded-full",
-      src: user.profile_photo_url,
+      src: user.profile_photo_path ? user.profile_photo_path : user.profile_photo_url,
       alt: ""
     })), react_1["default"].createElement("div", {
       className: "ml-4"

@@ -44,7 +44,7 @@ const User = () => {
                                 <div className="flex-shrink-0 h-10 w-10">
                                     <img
                                         className="h-10 w-10 border border-gray-100 rounded-full"
-                                        src={user.profile_photo_url}
+                                        src={user.profile_photo_path ? user.profile_photo_path : user.profile_photo_url}
                                         alt=""/>
                                 </div>
                                 <div className="ml-4">
