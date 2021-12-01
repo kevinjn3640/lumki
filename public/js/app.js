@@ -2141,7 +2141,7 @@ var inertia_react_1 = __webpack_require__(/*! @inertiajs/inertia-react */ "./nod
 var useRoute_1 = __importDefault(__webpack_require__(/*! @/Hooks/useRoute */ "./resources/js/Hooks/useRoute.tsx"));
 
 var User = function User() {
-  var _a, _b;
+  var _a, _b, _c;
 
   var page = (0, inertia_react_1.usePage)();
   var route = (0, useRoute_1["default"])();
@@ -2168,7 +2168,7 @@ var User = function User() {
     className: "sr-only"
   }, "Edit")))), react_1["default"].createElement("tbody", {
     className: "bg-white divide-y divide-gray-200"
-  }, (_b = (_a = page.props) === null || _a === void 0 ? void 0 : _a.users) === null || _b === void 0 ? void 0 : _b.map(function (user, index) {
+  }, (_c = (_b = (_a = page.props) === null || _a === void 0 ? void 0 : _a.users) === null || _b === void 0 ? void 0 : _b.data) === null || _c === void 0 ? void 0 : _c.map(function (user, index) {
     return react_1["default"].createElement("tr", {
       key: index
     }, react_1["default"].createElement("td", {

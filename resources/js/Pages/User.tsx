@@ -32,7 +32,7 @@ const User = () => {
                 </tr>
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
-                {page.props?.users?.map((user: Object | any, index: number) => (
+                {page.props?.users?.data?.map((user: Object | any, index: number) => (
                     <tr key={index}>
                         <td className="px-6 py-4 whitespace-nowrap">
                             <div className="flex items-center">
