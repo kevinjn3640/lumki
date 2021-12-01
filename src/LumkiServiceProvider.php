@@ -15,7 +15,7 @@ class LumkiServiceProvider extends PackageServiceProvider
         $this->registerRoutes();
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'lumki');
         $this->publishes([
-            __DIR__.'/../config/config.php' => config_path('lumki.php'),
+            __DIR__.'/config/config.php' => config_path('lumki.php'),
         ], 'config');
 
         $this->publishes([
@@ -24,7 +24,11 @@ class LumkiServiceProvider extends PackageServiceProvider
 
         $this->publishes([
             __DIR__.'/../resources/js/Pages' => base_path('resources/js/Pages/Lumki'),
-        ], 'pages');
+        ], 'lumki-pages');
+
+        $this->publishes([
+            __DIR__.'/../src/Http/Controllers/PostController.php' => base_path('app/Http/Controllers'),
+        ], 'lumki-controllers');
     }
 
     protected function registerRoutes()
