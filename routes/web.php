@@ -10,5 +10,5 @@ Route::group([
     'middleware' => config('lumki.middleware', ['web', 'auth:sanctum', \Laravel\Jetstream\Http\Middleware\ShareInertiaData::class]),
     'namespace' => 'Lumki\Lumki\Http\Controllers',
 ], function () {
-    Route::get('/users', [UserController::class, 'index'])->name('posts.index');
+    Route::get('/users', [UserController::class, 'index'])->name('users.index');
 });
