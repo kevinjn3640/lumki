@@ -2,12 +2,17 @@
 
 namespace Lumki\Lumki\Http\Controllers;
 
-use Illuminate\Foundation\Auth\User;
+//use Illuminate\Foundation\Auth\User;
+use App\Http\Controllers\Controller;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\View;
 //use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Route;
+use Spatie\Permission\Models\Role;
 
-class UserController
+class UserController extends Controller
 {
     public function index()
     {
