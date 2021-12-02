@@ -27,7 +27,7 @@ class LumkiServiceProvider extends PackageServiceProvider
         ], 'lumki-pages');
 
         $this->publishes([
-            __DIR__.'/../src/Http/Controllers/PostController.php' => base_path('app/Http/Controllers'),
+            __DIR__ . '/../src/Http/Controllers/UserController.php' => base_path('app/Http/Controllers'),
         ], 'lumki-controllers');
     }
 

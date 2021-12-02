@@ -7,7 +7,7 @@ use Inertia\Inertia;
 use Illuminate\Support\Facades\View;
 //use App\Models\User;
 
-class PostController
+class UserController
 {
     public function index()
     {
