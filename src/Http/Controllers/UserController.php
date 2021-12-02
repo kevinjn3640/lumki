@@ -29,9 +29,7 @@ class UserController extends Controller
 
 //        Inertia::share(app(FrontendState::class)->current($type, $billable));
 
-        return Inertia::render('Lumki/User', [
-            'users' => \App\Models\User::orderBy('name')->paginate(10),
-        ]);
+        return Inertia::render('Lumki/User');
     }
 
     public function show()
