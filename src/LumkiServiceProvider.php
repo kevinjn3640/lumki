@@ -17,10 +17,11 @@ class LumkiServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $this->registerRoutes();
         $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'lumki');
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'lumki');
         // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
-        $this->loadRoutesFrom(__DIR__ . '/routes.php');
+//        $this->loadRoutesFrom(__DIR__ . '/routes.php');
 //        $this->registerBladeDirectives();
 
         // Publishing is only necessary when using the CLI.
