@@ -3,7 +3,9 @@ import {usePage} from "@inertiajs/inertia-react";
 //@ts-ignore
 import useRoute from "@/Hooks/useRoute";
 //@ts-ignore
-import AppLayout from '../../Layouts/AppLayout';
+import AppLayout from '../../../Layouts/AppLayout';
+//@ts-ignore
+import {HStack} from "@chakra-ui/react";
 
 const Index = () => {
     const page = usePage<Object | any>();
@@ -45,7 +47,7 @@ const Index = () => {
                             </tr>
                             </thead>
                             <tbody className="bg-white divide-y divide-gray-200">
-                            {page.props?.users?.data?.map((user: Object | any, index: number) => (
+                            {page.props?.usersData?.map((user: Object | any, index: number) => (
                                 <tr key={index}>
                                     <td className="px-6 py-4 whitespace-nowrap">
                                         <div className="flex items-center">
@@ -77,21 +79,28 @@ const Index = () => {
                                         </span>
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap font-semibold text-sm text-gray-500">
-                                        <span
-                                            className="bg-blue-100 text-blue-700 px-2.5 py-1 inline-flex text-sm leading-5 font-semibold rounded-lg">
-                                            Roles
-                                        </span>
+                                        {user.roles?.length !== 0 ? (
+                                            <HStack spacing={2}>
+                                                {user.roles?.map((role: any, index: any) => (
+                                                    <span key={index}
+                                                          className="bg-blue-100 text-blue-700 px-2.5 py-1 inline-flex text-sm leading-5 font-semibold rounded-lg">
+                                                        {role.name}
+                                                    </span>
+                                                ))}
+                                            </HStack>
+                                        ) : null}
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                        <a href={route('users.index', user)}
-                                           className="bg-gray-700 text-white p-2 px-4 rounded-lg hover:bg-gray-900">Edit</a>
-                                        {/*@if($user->hasRole('Superadmin') && Auth::user()->id === $user->id)*/}
-                                        {/*@else*/}
-                                        <a href={route('impersonate', user.id)}
-                                           className="bg-gray-700 text-white p-2 px-4 rounded-lg hover:bg-gray-900">
-                                            Impersonate
-                                        </a>
-                                        {/*@endif*/}
+                                        <HStack spacing={2}>
+                                            <a href={route('users.index', user)}
+                                               className="bg-gray-700 text-white p-2 px-4 rounded-lg hover:bg-gray-900">Edit</a>
+                                            {user.canBeImpersonated && !page.props.isImpersonating && !user.isAdmin ? (
+                                                <a href={route('impersonate', user.id)}
+                                                   className="bg-gray-700 text-white p-2 px-4 rounded-lg hover:bg-gray-900">
+                                                    {page.props.isImpersonating ? 'Leave Impersonation' : 'Impersonate'}
+                                                </a>
+                                            ) : null}
+                                        </HStack>
                                     </td>
                                 </tr>))}
 

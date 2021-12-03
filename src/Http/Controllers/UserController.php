@@ -6,6 +6,7 @@ namespace Lumki\Lumki\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\View;
+
 //use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -19,11 +20,16 @@ class UserController extends Controller
         Inertia::setRootView('lumki::lumki');
 
         View::share([
-            'cssPath' => __DIR__.'/../../../public/css/app.css',
-            'jsPath' => __DIR__.'/../../../public/js/app.js',
+            'cssPath' => __DIR__ . '/../../../public/css/app.css',
+            'jsPath' => __DIR__ . '/../../../public/js/app.js',
         ]);
 
         return Inertia::render('Lumki/Users/Index');
+    }
+
+    public function edit(): \Inertia\Response
+    {
+        return Inertia::render('Lumki/Users/Edit');
     }
 
     public function show()
