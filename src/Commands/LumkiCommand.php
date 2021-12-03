@@ -153,14 +153,14 @@ class LumkiCommand extends Command
                 $this->info(
                     Lumki::insertLineAfter(
                         app_path("Http/Middleware/HandleInertiaRequests.php"),
-                        "namespace App\Http\Middleware;\n",
+                        "use Illuminate\Http\Request;",
                         "use Illuminate\Support\Facades\Auth;\nuse Illuminate\Support\Facades\URL;\nuse App\Models\User;")
                 );
                 $request = '';
                 $this->info(
                     Lumki::insertLineAfter(
                         app_path("Http/Middleware/HandleInertiaRequests.php"),
-                        "return array_merge(parent::share($request), [",
+                        "return array_merge(parent::share(\$request), [",
                         "'userCanBeImpersonated' => can_be_impersonated(Auth::user() ? Auth::user() : User::all()->first()),\n'userIsImpersonating' => is_impersonating(),\n'userCanImpersonate' => can_impersonate(),\n'rootURL' => URL::to('/'),\n'isAdmin' => Auth::user()->hasAnyRole('Superadmin|Admin'),\n'userRole' => Auth::user() ? Auth::user()->getRoleNames() : User::all()->first()->getRoleNames(),")
                 );
             }
@@ -173,7 +173,7 @@ class LumkiCommand extends Command
                 $this->info(
                     Lumki::insertLineBefore(
                         resource_path('js/Layouts/AppLayout.tsx'),
-                        "{page.props.jetstream.hasApiFeatures ? (\n<JetDropdownLink href={route('api-tokens.index')}>",
+                        "{page.props.jetstream.hasApiFeatures ? (",
                         "{page.props.isAdmin ? (<JetDropdownLink href={route('users.index')}>Users</JetDropdownLink>) : null}\n{page.props.userIsImpersonating ? (<JetDropdownLink href={route('impersonate.leave')}>Leave Impersonate</JetDropdownLink>) : null}\n")
                 );
             }
