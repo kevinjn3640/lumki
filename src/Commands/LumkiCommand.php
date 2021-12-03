@@ -80,6 +80,7 @@ class LumkiCommand extends Command
                 );
             }
         );
+
         // Añadir Trait/Use Lab404\Impersonate\Models\Impersonate; after Spatie\Permission\Traits\HasRoles
         $this->askStep(
             __("lumki::cmd.add_trait_impersonate_user"),
@@ -145,8 +146,43 @@ class LumkiCommand extends Command
             }
         );
 
+        // Add Inertia data in HandleInertiaRequests MiddleWare
         $this->askStep(
-            __("lumki::cmd.add_middleware"),
+            __("lumki::cmd.add_inertia_custom_data"),
+            function () {
+                $this->info(
+                    Lumki::insertLineAfter(
+                        app_path("Http/Middleware/HandleInertiaRequests.php"),
+                        "namespace App\Http\Middleware;\n",
+                        "use Illuminate\Support\Facades\Auth;\nuse Illuminate\Support\Facades\URL;\nuse App\Models\User;")
+                );
+
+                $this->info(
+                    Lumki::insertLineAfter(
+                        app_path("Http/Middleware/HandleInertiaRequests.php"),
+                        "return array_merge(parent::share($request), [",
+                        "'userCanBeImpersonated' => can_be_impersonated(Auth::user() ? Auth::user() : User::all()->first()),\n'userIsImpersonating' => is_impersonating(),\n'userCanImpersonate' => can_impersonate(),\n'rootURL' => URL::to('/'),\n'isAdmin' => Auth::user()->hasAnyRole('Superadmin|Admin'),\n'userRole' => Auth::user() ? Auth::user()->getRoleNames() : User::all()->first()->getRoleNames(),")
+                );
+            }
+        );
+
+        // Add Inertia data in HandleInertiaRequests MiddleWare
+        $this->askStep(
+            __("lumki::cmd.add_lumki_links_in_dropdown"),
+            function () {
+                $this->info(
+                    Lumki::insertLineBefore(
+                        app_path("Http/Middleware/HandleInertiaRequests.php"),
+                        "{page.props.jetstream.hasApiFeatures ? (\n<JetDropdownLink href={route('api-tokens.index')}>",
+                        "{page.props.isAdmin ? (<JetDropdownLink href={route('users.index')}>Users</JetDropdownLink>) : null}\n{page.props.userIsImpersonating ? (<JetDropdownLink href={route('impersonate.leave')}>Leave Impersonate</JetDropdownLink>) : null}\n")
+                );
+            }
+        );
+
+
+        // Add Spatie MiddleWares
+        $this->askStep(
+            __("lumki::cmd.add_spatie_middleware"),
             function () {
 //                $this->info(
 //                    Lumki::insertLineAfter(
