@@ -27,7 +27,7 @@ class UserController extends Controller
         return Inertia::render('Lumki/Users/Index');
     }
 
-    public function edit(App\Models\User $user): \Inertia\Response
+    public function edit(\App\Models\User $user): \Inertia\Response
     {
         return Inertia::render('Lumki/Users/Edit', [
             'user' => $user,
