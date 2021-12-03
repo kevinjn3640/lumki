@@ -148,18 +148,18 @@ class LumkiCommand extends Command
         $this->askStep(
             __("lumki::cmd.add_middleware"),
             function () {
-                $this->info(
-                    Lumki::insertLineAfter(
-                        app_path('Http/Kernel.php'),
-                        "use Illuminate\Foundation\Http\Kernel as HttpKernel;",
-                        "use Spatie\Permission\Middlewares\PermissionMiddleware;")
-                );
+//                $this->info(
+//                    Lumki::insertLineAfter(
+//                        app_path('Http/Kernel.php'),
+//                        "use Illuminate\Foundation\Http\Kernel as HttpKernel;",
+//                        "use Spatie\Permission\Middlewares\RoleMiddleware;\nuse Spatie\Permission\Middlewares\PermissionMiddleware;\nuse Spatie\Permission\Middlewares\RoleOrPermissionMiddleware;")
+//                );
 
                 $this->info(
                     Lumki::insertLineAfter(
                         app_path('Http/Kernel.php'),
                         "'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,",
-                        "'permission' => \Spatie\Permission\Middlewares\PermissionMiddleware::class,")
+                        "'role' => \Spatie\Permission\Middlewares\RoleMiddleware::class,\n'permission' => \Spatie\Permission\Middlewares\PermissionMiddleware::class,\n'role_or_permission' => \Spatie\Permission\Middlewares\RoleOrPermissionMiddleware::class,")
                 );
             }
         );
