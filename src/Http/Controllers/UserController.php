@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
+use Lumki\Lumki\FrontendState;
 use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
@@ -23,7 +24,7 @@ class UserController extends Controller
             'cssPath' => __DIR__ . '/../../../public/css/app.css',
             'jsPath' => __DIR__ . '/../../../public/js/app.js',
         ]);
-        Inertia::share('appName', config('app.name'));
+        Inertia::share('appName', app(FrontendState::class)->curren());
         return Inertia::render('Lumki/Users/Index');
     }
 
