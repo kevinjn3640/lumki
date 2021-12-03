@@ -27,9 +27,13 @@ class UserController extends Controller
         return Inertia::render('Lumki/Users/Index');
     }
 
-    public function edit(): \Inertia\Response
+    public function edit(App\Models\User $user): \Inertia\Response
     {
-        return Inertia::render('Lumki/Users/Edit');
+        return Inertia::render('Lumki/Users/Edit', [
+            'user' => $user,
+            'roles' => Role::all(),
+//            'custom_fields' => config('lumki.custom_fields')
+        ]);
     }
 
     public function show()
