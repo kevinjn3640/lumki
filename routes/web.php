@@ -7,7 +7,7 @@ use Lumki\Lumki\Http\Controllers\UserController;
 //Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
 
 Route::group([
-    'middleware' => config('lumki.middleware', ['web', 'auth:sanctum', \Laravel\Jetstream\Http\Middleware\ShareInertiaData::class]),
+    'middleware' => config('lumki.middleware', ['web', 'auth:sanctum', 'role:Superadmin', \Laravel\Jetstream\Http\Middleware\ShareInertiaData::class]),
     'namespace' => 'Lumki\Lumki\Http\Controllers',
 ], function () {
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
