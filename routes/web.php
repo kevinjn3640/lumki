@@ -11,5 +11,5 @@ Route::group([
     'namespace' => 'Lumki\Lumki\Http\Controllers',
 ], function () {
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
-    Route::get('/users/edit', [UserController::class, 'edit'])->name('users.edit');
+    Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
 });

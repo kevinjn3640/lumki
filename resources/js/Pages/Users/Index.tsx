@@ -1,11 +1,10 @@
 import React from "react";
-import {usePage} from "@inertiajs/inertia-react";
+import {InertiaLink, usePage} from "@inertiajs/inertia-react";
 //@ts-ignore
 import useRoute from "@/Hooks/useRoute";
 //@ts-ignore
 import AppLayout from '../../../Layouts/AppLayout';
-//@ts-ignore
-import {HStack} from "@chakra-ui/react";
+import {HStack, Link} from "@chakra-ui/react";
 
 const Index = () => {
     const page = usePage<Object | any>();
@@ -92,8 +91,8 @@ const Index = () => {
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                         <HStack spacing={2}>
-                                            <a href={route('users.index', user)}
-                                               className="bg-gray-700 text-white p-2 px-4 rounded-lg hover:bg-gray-900">Edit</a>
+                                            <Link as={InertiaLink} href={route('users.edit', user.id)}
+                                                  className="bg-gray-700 text-white p-2 px-4 rounded-lg hover:bg-gray-900">Edit</Link>
                                             {user.canBeImpersonated && !page.props.isImpersonating && !user.isAdmin ? (
                                                 <a href={route('impersonate', user.id)}
                                                    className="bg-gray-700 text-white p-2 px-4 rounded-lg hover:bg-gray-900">
