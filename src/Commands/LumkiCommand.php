@@ -145,18 +145,36 @@ class LumkiCommand extends Command
             }
         );
 
+        $this->askStep(
+            __("lumki::cmd.add_middleware"),
+            function () {
+                $this->info(
+                    Lumki::insertLineAfter(
+                        app_path('Http/Kernel.php'),
+                        "use Illuminate\Foundation\Http\Kernel as HttpKernel;",
+                        "use Spatie\Permission\Middlewares\PermissionMiddleware;")
+                );
+
+                $this->info(
+                    Lumki::insertLineAfter(
+                        app_path('Http/Kernel.php'),
+                        "'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,",
+                        "'permission' => \Spatie\Permission\Middlewares\PermissionMiddleware::class,")
+                );
+            }
+        );
 
 
     }
 
     public function askStep($question, $yesCallback, $noCallback = null)
     {
-        if( $this->confirm($question, "yes") ){
+        if ($this->confirm($question, "yes")) {
             $yesCallback();
-        }else{
-            if($noCallback === null){
+        } else {
+            if ($noCallback === null) {
                 $this->info("Step Skipped.");
-            }else{
+            } else {
                 $noCallback();
             }
         }
