@@ -2,9 +2,10 @@ import React from "react";
 import {usePage} from "@inertiajs/inertia-react";
 //@ts-ignore
 import useRoute from "@/Hooks/useRoute";
+//@ts-ignore
 import AppLayout from '../../Layouts/AppLayout';
 
-const User = () => {
+const Index = () => {
     const page = usePage<Object | any>();
     const route = useRoute();
     return (
@@ -102,4 +103,4 @@ const User = () => {
         </AppLayout>
     )
 }
-export default User;
+export default Index;

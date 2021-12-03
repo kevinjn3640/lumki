@@ -14,22 +14,16 @@ use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
-    public function index()
+    public function index(): \Inertia\Response
     {
-//        dd("HI");
         Inertia::setRootView('lumki::lumki');
 
         View::share([
             'cssPath' => __DIR__.'/../../../public/css/app.css',
             'jsPath' => __DIR__.'/../../../public/js/app.js',
-//            'manifestPath' => __DIR__.'/../../../public/js/manifest.js',
-//            'vendorPath' => __DIR__.'/../../../public/js/vendor.js',
-//            'translations' => static::getTranslations(),
         ]);
 
-//        Inertia::share(app(FrontendState::class)->current($type, $billable));
-
-        return Inertia::render('Lumki/User');
+        return Inertia::render('Lumki/Users/Index');
     }
 
     public function show()
