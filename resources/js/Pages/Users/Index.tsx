@@ -91,8 +91,8 @@ const Index = () => {
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                         <HStack spacing={2}>
-                                            <Link as={InertiaLink} href={route('users.edit', user.id)}
-                                                  className="bg-gray-700 text-white p-2 px-4 rounded-lg hover:bg-gray-900">Edit</Link>
+                                            <InertiaLink href={route('users.edit', user.id)}
+                                                         className="bg-gray-700 text-white p-2 px-4 rounded-lg hover:bg-gray-900">Edit</InertiaLink>
                                             {user.canBeImpersonated && !page.props.isImpersonating && !user.isAdmin ? (
                                                 <a href={route('impersonate', user.id)}
                                                    className="bg-gray-700 text-white p-2 px-4 rounded-lg hover:bg-gray-900">
