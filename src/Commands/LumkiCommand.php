@@ -156,7 +156,7 @@ class LumkiCommand extends Command
                         "namespace App\Http\Middleware;\n",
                         "use Illuminate\Support\Facades\Auth;\nuse Illuminate\Support\Facades\URL;\nuse App\Models\User;")
                 );
-
+                $request = '';
                 $this->info(
                     Lumki::insertLineAfter(
                         app_path("Http/Middleware/HandleInertiaRequests.php"),
