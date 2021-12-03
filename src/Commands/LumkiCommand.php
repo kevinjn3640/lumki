@@ -172,7 +172,7 @@ class LumkiCommand extends Command
             function () {
                 $this->info(
                     Lumki::insertLineBefore(
-                        app_path("Http/Middleware/HandleInertiaRequests.php"),
+                        resource_path('js/Layouts/AppLayout.tsx'),
                         "{page.props.jetstream.hasApiFeatures ? (\n<JetDropdownLink href={route('api-tokens.index')}>",
                         "{page.props.isAdmin ? (<JetDropdownLink href={route('users.index')}>Users</JetDropdownLink>) : null}\n{page.props.userIsImpersonating ? (<JetDropdownLink href={route('impersonate.leave')}>Leave Impersonate</JetDropdownLink>) : null}\n")
                 );
