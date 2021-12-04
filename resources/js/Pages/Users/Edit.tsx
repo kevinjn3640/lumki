@@ -58,7 +58,7 @@ const Edit = () => {
                                         <Box key={index} background={'gray.50'} border={1} borderStyle={'solid'}
                                              borderColor={'gray.100'} width={'auto'} display={'inline-flex'}
                                              rounded={'lg'}>
-                                            <label className="flex justify-center items-center px-3 py-2">
+                                            <label className="flex justify-center items-center px-3 py-2 cursor-pointer">
                                                 <JetCheckbox
                                                     value={roles.name}
                                                     checked={updateRolesForm.data.roles.includes(
