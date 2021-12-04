@@ -174,7 +174,7 @@ class LumkiCommand extends Command
                     Lumki::insertLineBefore(
                         resource_path('js/Layouts/AppLayout.tsx'),
                         "{page.props.jetstream.hasApiFeatures ? (",
-                        "{page.props.isAdmin ? (<JetDropdownLink href={route('users.index')}>Users</JetDropdownLink>) : null}\n{page.props.userIsImpersonating ? (<JetDropdownLink href={route('impersonate.leave')}>Leave Impersonate</JetDropdownLink>) : null}\n")
+                        "{page.props.isAdmin ? (<JetDropdownLink href={route('lumki.users.index')}>Users</JetDropdownLink>) : null}\n{page.props.userIsImpersonating ? (<JetDropdownLink href={route('impersonate.leave')}>Leave Impersonate</JetDropdownLink>) : null}\n")
                 );
             }
         );
