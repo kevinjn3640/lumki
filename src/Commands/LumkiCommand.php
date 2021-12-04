@@ -161,7 +161,7 @@ class LumkiCommand extends Command
                     Lumki::insertLineAfter(
                         app_path("Http/Middleware/HandleInertiaRequests.php"),
                         "return array_merge(parent::share(\$request), [",
-                        "'userCanBeImpersonated' => can_be_impersonated(Auth::user() ? Auth::user() : User::all()->first()),\n'userIsImpersonating' => is_impersonating(),\n'userCanImpersonate' => can_impersonate(),\n'rootURL' => URL::to('/'),\n'isAdmin' => Auth::user()->hasAnyRole('Superadmin|Admin'),\n'userRole' => Auth::user() ? Auth::user()->getRoleNames() : User::all()->first()->getRoleNames(),")
+                        "'userCanBeImpersonated' => Auth::user() ? can_be_impersonated(Auth::user()) : null,\n'userIsImpersonating' => is_impersonating(),\n'userCanImpersonate' => can_impersonate(),\n'rootURL' => URL::to('/'),\n'isAdmin' => Auth::user() ? Auth::user()->hasAnyRole('Superadmin|Admin') : null,\n'userRole' => Auth::user() ? Auth::user()->getRoleNames() : null,")
                 );
             }
         );
