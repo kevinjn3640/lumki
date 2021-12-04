@@ -5,7 +5,7 @@ import useRoute from "@/Hooks/useRoute";
 //@ts-ignore
 import AppLayout from '../../../Layouts/AppLayout';
 //@ts-ignore
-import {Box, Flex, HStack, VStack} from "@chakra-ui/react";
+import {Box, chakra, Flex, HStack, VStack} from "@chakra-ui/react";
 import JetCheckbox from "@/Jetstream/Checkbox";
 import JetButton from "@/Jetstream/Button";
 import classNames from "classnames";
@@ -58,7 +58,8 @@ const Edit = () => {
                                         <Box key={index} background={'gray.50'} border={1} borderStyle={'solid'}
                                              borderColor={'gray.100'} width={'auto'} display={'inline-flex'}
                                              rounded={'lg'}>
-                                            <label className="flex justify-center items-center px-3 py-2 cursor-pointer">
+                                            <label
+                                                className="flex justify-center items-center px-3 py-2 cursor-pointer">
                                                 <JetCheckbox
                                                     value={roles.name}
                                                     checked={updateRolesForm.data.roles.includes(
@@ -84,9 +85,9 @@ const Edit = () => {
                                                         }
                                                     }}
                                                 />
-                                                <span className="ml-2 text-sm text-gray-600">
-                                        {roles.name}
-                                    </span>
+                                                <chakra.span className="ml-2 text-sm text-gray-600" userSelect={'none'}>
+                                                    {roles.name}
+                                                </chakra.span>
                                             </label>
                                         </Box>
                                     </Box>
