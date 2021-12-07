@@ -25,7 +25,10 @@ class RoleController extends Controller
             'jsPath' => __DIR__ . '/../../../public/js/app.js',
         ]);
         Inertia::share(app(FrontendState::class)->current());
-        return Inertia::render('Lumki/Roles/Index');
+        return Inertia::render('Lumki/Roles/Index', [
+            'availableRoles' => Role::all(),
+//            'custom_fields' => config('lumki.custom_fields')
+        ]);
     }
 
 }
