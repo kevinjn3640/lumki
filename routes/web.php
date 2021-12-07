@@ -14,5 +14,5 @@ Route::group([
     Route::get('/users', [UserController::class, 'index'])->name('lumki.users.index');
     Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('lumki.users.edit');
     Route::put('/users/{id}/edit', [UserController::class, 'update'])->name('lumki.users.update');
-    Route::put('/roles', [RoleController::class, 'index'])->name('lumki.roles.index');
+    Route::get('/roles', [RoleController::class, 'index'])->name('lumki.roles.index');
 });
